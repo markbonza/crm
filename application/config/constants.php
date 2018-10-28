@@ -83,3 +83,67 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+define('SITE_NAME', 'CRM');
+define('SITE_DESCRIPTION', 'CRM for you');
+
+define('SITE_PERMISSIONS', serialize(array(
+    'users'=>array(
+        'index'=>array(
+            'view',
+            'add',
+            'edit',
+            'delete'
+        ),
+        'groups'=>array(
+            'view',
+            'add',
+            'edit',
+            'delete'
+        ),
+    ),
+    'costumers'=>array(
+        'index'=>array(
+            'view',
+            'add',
+            'edit',
+            'delete',
+        ),
+        'companies'=>array(
+            'view',
+            'add',
+            'edit',
+            'delete',
+        ),
+        'plan'=>array(
+            'view',
+            'edit',
+        ),
+    ),
+)));
+
+define('SITE_PERMISSIONS_HIDE_FIRST', serialize(array(
+    'costumers'=>array(
+        'plan'
+    ),
+)));
+define('SITE_PERMISSIONS_TITLES', serialize(array(
+    'users'=>array(
+        'index'=>'list',
+    ),
+    'costumers'=>array(
+        'index'=>'list',
+    ),
+)));
+define('SITE_ICONS', serialize(array(
+    'users'=>'perm_identity',
+    'costumers'=>'group',
+)));
+define('FREE_PERMISSION', serialize(array(
+   'dashboard' 
+)));
+define('SITE_SALUTATIONS', serialize(array(
+    0=>'Mr.',
+    1=>'Ms.',
+    2=>'Mrs.',
+)));
